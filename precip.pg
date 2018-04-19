@@ -1,0 +1,34 @@
+#!/usr/bin/gnuplot -persist
+reset
+set terminal png
+set term png size 1024,600 #800 pixels by 600 pixels
+
+set datafile separator " "
+set xdata time
+set timefmt "%d/%m/%Y %H"
+#set xrange [time(0):time(0) + 3*24*60*60]
+#set format x "h%H\n%d/%m\n%a"
+set xlabel "Time"
+set xtics font ", 10"
+
+set ytics 0.5
+set yrange [0:5]
+set ylabel 'mm/h'
+set y2tics 10
+set y2range [0:100]
+set y2label '% Chance'
+
+set title "Weather Forecast by Weather unlocked and Remo Tomasi (Rain/Snow)"
+set key lmargin
+set key font ",10"
+set grid
+set size 1, 1 # ratio 1:1
+
+set style data lines
+
+plot "DATAS/tmp.csv" using 1:10 title "RaMM", \
+"" using 1:11 title "Pr%" axes x1y2, \
+"" using 1:12 title "PrMM" axes x1y1, \
+"" using 1:13 title "SnMM" axes x1y1, \
+"" using 1:14 title "SnCM" axes x1y1
+#

@@ -1,0 +1,33 @@
+#!/usr/bin/gnuplot -persist
+reset
+set terminal png
+set term png size 1024,600 #800 pixels by 600 pixels
+
+set datafile separator " "
+set xdata time
+set timefmt "%d/%m/%Y %H"
+#set xrange [time(0):time(0) + 3*24*60*60]
+#set format x "h%H\n%d/%m\n%a"
+set xlabel "Time"
+set xtics font ", 10"
+
+set ytics 10
+set yrange [0:100]
+set ylabel '%'
+set y2tics 10
+set y2range [0:100]
+set y2label '%'
+
+set title "Weather Forecast by Weather unlocked and Remo Tomasi (Clouds)"
+set key lmargin
+set key font ",10"
+set grid
+set size 1, 1 # ratio 1:1
+
+set style data lines
+
+plot "DATAS/tmp.csv" using 1:9 title "Cl%" lw 5 lt 2 lc "purple", \
+"" using 1:8 title "ClH%" axes x1y1, \
+"" using 1:7 title "ClM%" axes x1y1, \
+"" using 1:6 title "ClL%" axes x1y1
+#

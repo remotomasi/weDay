@@ -1,0 +1,25 @@
+#!/usr/bin/gnuplot
+reset
+set terminal png
+set term png size 1024,600 #800 pixels by 600 pixels
+
+set datafile separator " "
+set xdata time
+set timefmt "%d/%m/%Y %H"
+#set format x "h%H\n%d/%m\n%a"
+set xlabel "Time"
+set xtics font ", 10"
+
+set ylabel "hPa"
+set ytics 5
+set yrange [990:1040]
+
+set title "Weather Forecast by Weather unlocked and Remo Tomasi (Pressure)"
+set key lmargin
+set grid
+set size 1, 1 # ratio 1:1
+
+set style data lines
+
+plot "DATAS/tmp.csv" using 1:18 title "Pressure"
+#
