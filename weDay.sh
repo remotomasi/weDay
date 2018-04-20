@@ -51,7 +51,7 @@ awk 'BEGIN{FS=OFS=" "}{print $1,int($2/100),$3,$4,$5,$6,$7,$8,$9,$10,gsub(/"<1"/
                                                                                                                                                                     # replacement of the chr '<' to ''  --> '<1' => '1'
 
 # creation of the first line (columns)
-echo -e "Date Time Temp DewPoint HumMax CloudLow CloudMid CloudHigh CloudTot RainMM ProbPrec PrecMM SnowMM SnowTotCM WindDir WindDirDeg WindSpeed WindGst Press Vis Desc" > DATAS/finalDatas.csv
+echo -e "Date Time Temp DewPoint Hum CloudLow CloudMid CloudHigh CloudTot RainMM ProbPrec PrecMM SnowMM SnowTotCM WindDir WindDirDeg WindSpeed WindGst Press Vis Desc" > DATAS/finalDatas.csv
 cat DATAS/tmp.csv >> DATAS/finalDatas.csv
 #head -6 DATAS/tmp.csv > finalDatas.csv
 
