@@ -1,0 +1,33 @@
+#!/usr/bin/gnuplot
+reset
+set terminal png
+set term png size 1024,600 #800 pixels by 600 pixels
+
+set datafile separator " "
+set xdata time
+set timefmt "%d/%m/%Y %H"
+#set xrange [time(0):time(0) + 3*24*60*60]
+#set format x "h%H\n%d/%m\n%a"
+set xlabel "Time"
+set xtics font ", 10"
+
+set ylabel "N               E                S              W               N"
+set ylabel font ", 15"
+set ytics 90
+set yrange [0:360]
+set y2label 'Km/h'
+set ylabel font ", 15"
+set y2tics 10
+set y2range [0:60]
+
+set title "Weather Forecast by Weather Unlocked and Remo Tomasi (Wind)"
+set key lmargin
+set key font ",10"
+set grid
+set size 1, 1 # ratio 1:1
+
+set style data lines
+
+plot "DATAS/tmp.csv" using 1:16 title "WindDir", \
+"" using 1:17 title "WindSpeed" axes x1y1
+#
