@@ -28,6 +28,6 @@ set size 1, 1 # ratio 1:1
 
 set style data lines
 
-plot "DATAS/tmp.csv" using 1:16 title "WindDir", \
-"" using 1:17 title "WindSpeed" axes x1y1
+plot "DATAS/tmp.csv" using 1:16 title "WDir", \
+"" using 1:17 title "WSpd" axes x1y1
 #
