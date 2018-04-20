@@ -22,7 +22,7 @@ if [ -e DATAS/tmp.csv ]; then rm DATAS/tmp.csv; fi
 # Obtain today date
 DATE=$(date +%d%m%Y)
 
-echo -e "Insert latitude and longitude (separated by space)"
+echo -e "Insert latitude and longitude (separated by spaces, i.e.: 60.32 21.03)"
 read par mer
 
 # download of json datas and save the wjson file
