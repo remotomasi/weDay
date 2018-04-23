@@ -13,9 +13,6 @@ set xtics font ", 10"
 set ylabel "hPa"
 set ytics 5
 set yrange [990:1040]
-set y2tics 10
-set y2range [0:60]
-set y2label 'Km/h'
 
 set title "Weather Forecast by Weather unlocked and Remo Tomasi (Pressure)"
 set key lmargin
@@ -24,6 +21,5 @@ set size 1, 1 # ratio 1:1
 
 set style data lines
 
-plot "DATAS/tmp.csv" using 1:19 title "Pres", \
-"" using 1:17 title "Wind" axes x1y2
+plot "DATAS/tmp.csv" using 1:18 title "Pres"
 #

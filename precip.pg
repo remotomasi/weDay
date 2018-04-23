@@ -25,10 +25,11 @@ set grid
 set size 1, 1 # ratio 1:1
 
 set style data lines
-
-plot "DATAS/tmp.csv" using 1:10 title "RaMM", \
-"" using 1:11 title "Pr%" axes x1y2, \
-"" using 1:12 title "PrMM" axes x1y1, \
-"" using 1:13 title "SnMM" axes x1y1, \
-"" using 1:14 title "SnCM" axes x1y1
+set boxwidth 0.95 relative
+set style fill transparent solid 0.5 noborder
+plot "DATAS/tmp.csv" using 1:10 lc "purple" title "RaMM", \
+"" using 1:11 lc rgb "red" title "Pr%" axes x1y2, \
+"" using 1:12 w boxes lc rgb "blue" title "PrMM" axes x1y1, \
+"" using 1:13 w boxes lc rgb "green" title "SnMM" axes x1y1, \
+"" using 1:14 w boxes lc rgb "yellow" title "SnCM" axes x1y1
 #
