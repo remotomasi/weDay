@@ -56,7 +56,7 @@ cat DATAS/tmp.csv >> DATAS/finalDatas.csv
 #head -6 DATAS/tmp.csv > finalDatas.csv
 
 ./conv2htm.sh DATAS/tmp.csv > HTMLS/weatherForecast.html                 # csv to html conversion
-./pressureWind.pg > IMAGES/weatherPressureWind.png
+#./pressureWind.pg > IMAGES/weatherPressureWind.png
 ./tempDP.pg > IMAGES/weatherTempDP.png
 ./precip.pg > IMAGES/weatherPrecip.png
 ./cloud.pg > IMAGES/weatherClouds.png
