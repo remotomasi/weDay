@@ -5,9 +5,9 @@ set term png size 1024,600 #800 pixels by 600 pixels
 
 set datafile separator " "
 set xdata time
-set timefmt "%d/%m/%Y %H"
-#set format x "h%H\n%d/%m\n%a"
-set xlabel "Time"
+set timefmt "%H" #d/%m" #/%Y %H"
+#set xrange [time(0):time(0) + 1*86400]
+#set xlabel "Time"
 set xtics font ", 10"
 
 set ylabel "hPa"
@@ -22,6 +22,4 @@ set size 1, 1 # ratio 1:1
 set style data lines
 set bar 0 # disable whiskers on the errorbars
 
-plot "DATAS/tmp.csv" using 1:19 title "Pres", \
-"" u 1:(1020):(.25*$17*cos(180-$16)):(.25*$17*sin(180-$16)) w vectors lw 1 lt 1 title ""
-#
+plot "DATAS/tmp.csv" u ($2+1):(1020):(.05*$17*cos(90-$16)):(.05*$17*sin(90-$16)) w vectors lw 1 lt 1 title "Wind"

@@ -59,5 +59,6 @@ cat DATAS/tmp.csv >> DATAS/finalDatas.csv
 ./pressureWind.pg > IMAGES/weatherPressureWind.png
 ./tempDP.pg > IMAGES/weatherTempDP.png
 ./precip.pg > IMAGES/weatherPrecip.png
-./cloud.pg > IMAGES/weatherClouds.png                   # graph pressure/zerolevel
+./cloud.pg > IMAGES/weatherClouds.png
 ./wind.pg > IMAGES/weatherWind.png
+./pressure.pg > IMAGES/weatherPressure.png
