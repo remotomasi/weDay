@@ -55,6 +55,9 @@ echo -e "Date Time Temp DewPoint Hum CloudLow CloudMid CloudHigh CloudTot RainMM
 cat DATAS/tmp.csv >> DATAS/finalDatas.csv
 #head -6 DATAS/tmp.csv > finalDatas.csv
 
+cat DATAS/tmp.csv > DATAS/tmp2.csv
+awk '{ print $0, NR }' DATAS/tmp2.csv > DATAS/tmp.csv  # adding number of the line at the end of each line
+
 ./conv2htm.sh DATAS/tmp.csv > HTMLS/weatherForecast.html                 # csv to html conversion
 #./pressureWind.pg > IMAGES/weatherPressureWind.png
 ./tempDP.pg > IMAGES/weatherTempDP.png
