@@ -59,9 +59,10 @@ cat DATAS/tmp.csv > DATAS/tmp2.csv
 awk '{ print $0, NR }' DATAS/tmp2.csv > DATAS/tmp.csv  # adding number of the line at the end of each line
 
 ./conv2htm.sh DATAS/tmp.csv > HTMLS/weatherForecast.html                 # csv to html conversion
-#./pressureWind.pg > IMAGES/weatherPressureWind.png
+./pressureWind.pg > IMAGES/weatherPressureWind.png
 ./tempDP.pg > IMAGES/weatherTempDP.png
 ./precip.pg > IMAGES/weatherPrecip.png
 ./cloud.pg > IMAGES/weatherClouds.png
 ./wind.pg > IMAGES/weatherWind.png
 ./pressure.pg > IMAGES/weatherPressure.png
+./weather.pg > IMAGES/weatherForecast.png
