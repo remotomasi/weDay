@@ -36,6 +36,6 @@ set size 1, 1 # ratio 1:1
 set style data lines
 
 plot "DATAS/tmp.csv" using 1:17 title "WSpd" axes x1y2, \
-"" u 22:(35):(0.2*$17*cos(90-$16)):(0.2*$17*sin(90-$16)) with vectors lw 1 lc rgb "green" title "WDir" axes x2y1 #, \
-#"" u 22:(35) w p lt 2 pt 7 ps 0.75 notitle axes x2y1
+"" u 22:(35):(0.05*$17*cos(90-$16)):(0.05*$17*sin(90-$16)) with vectors nohead lw 1 lc rgb "dark-green" title "WDir" axes x2y1, \
+"" u 22:(35) w p lt 2 pt 7 ps 1.5 notitle axes x2y1
 #

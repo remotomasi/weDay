@@ -29,5 +29,5 @@ set style data lines
 set bar 0 # disable whiskers on the errorbars
 
 plot "DATAS/tmp.csv" using 1:19 title "Pres", \
-"" u 22:(1025):(0.2*$17*cos(90-$16)):(0.2*$17*sin(90-$16)) with vectors lw 1 lc rgb "green" title "Wind" axes x2y1 #, \
-#"" u 22:(1025) w p lt 2 pt 7 ps 2 notitle axes x2y1
+"" u 22:(1025):(0.05*$17*cos(90-$16)):(0.05*$17*sin(90-$16)) with vectors nohead lw 1 lc rgb "dark-green" title "Wind" axes x2y1, \
+"" u 22:(1025) w p lt 2 pt 7 ps 1.5 notitle axes x2y1
