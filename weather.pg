@@ -32,6 +32,9 @@ set size 1, 1 # ratio 1:1
 set style data lines
 set bars small
 
+# for future icons addition
+IMG_LIST="cloudy.png few_clouds.png fog.png heavy_rain.png light_rain.png moon.png moon_cloudy.png moon_fewclouds.png partly_cloudy.png rain.png sleet.png snow.png sun.png thunderstorm.png wind.png"
+
 plot "DATAS/tmp.csv" u 22:(95):(0.48):(90-0.01*$9*359):(90) w circ lc rgb "brown" fs solid notitle axes x2y2, \
 "" u 22:(95):(0.48) w circ lc rgb "black" axes x2y2 notitle, \
 "" u 1:12 w boxes lc rgb "blue" fs solid border -1 title "PrMM" axes x1y1, \
