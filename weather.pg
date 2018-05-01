@@ -17,7 +17,7 @@ set x2range [0:50]
 set x2label 'Ore'
 
 set ytics 0.5
-set yrange [0:5]
+set yrange [0:11]
 set ylabel 'mm/h'
 set y2tics 10
 set y2range [0:100]
@@ -35,13 +35,13 @@ set bars small
 # for future icons addition
 IMG_LIST="cloudy.png few_clouds.png fog.png heavy_rain.png light_rain.png moon.png moon_cloudy.png moon_fewclouds.png partly_cloudy.png rain.png sleet.png snow.png sun.png thunderstorm.png wind.png"
 
-plot "DATAS/tmp.csv" u 22:(95):(0.48):(90-0.01*$9*359):(90) w circ lc rgb "brown" fs solid notitle axes x2y2, \
-"" u 22:(95):(0.48) w circ lc rgb "black" axes x2y2 notitle, \
-"" u 1:12 w boxes lc rgb "blue" fs solid border -1 title "PrMM" axes x1y1, \
+plot "DATAS/tmp.csv" u 1:12 w boxes lc rgb "blue" fs solid border -1 title "PrMM" axes x1y1, \
 "" u 1:17 title "WSpd" axes x1y2, \
-"" u 22:(70):(0.05*$17*cos(90-$16)):(0.05*$17*sin(90-$16)) with vectors nohead lw 1lc rgb "dark-green" title "WDir" axes x2y2, \
+"" u 22:(70):(0.1*$17*cos(90-$16)):(0.1*$17*sin(90-$16)) with vectors nohead lw 3 lc rgb "dark-green" title "WDir" axes x2y2, \
 "" u 22:(70) w p lt 2 pt 7 ps 1.5 notitle axes x2y2, \
 "" using 1:5 title "Hum" lc rgb "cyan" axes x1y2, \
-"" u 1:3:($4):3 w errorlines ls 1 pt 0 lt 1 lc rgb "red" axes x1y2 ti "T/DP"
+"" u 1:3:($4):3 w errorlines ls 1 pt 0 lt 1 lc rgb "red" axes x1y2 ti "T/DP", \
+"" u 22:(95):(0.48):(90-0.01*$9*359):(90) w circ lc rgb "brown" fs solid notitle axes x2y2, \
+"" u 22:(95):(0.48) w circ lc rgb "black" axes x2y2 t "Cloud"
 #"" using 1:3 title "Temp" axes x1y2, \
 #"" using 1:4 title "DewP" axes x1y2, \
