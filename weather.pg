@@ -21,7 +21,7 @@ set yrange [0:11]
 set ylabel 'mm/h'
 set y2tics 10
 set y2range [0:100]
-set y2label '% Chance'
+set y2label '% Chance \ °C \ Km/h'
 
 set title "Weather Forecast by Weather unlocked and Remo Tomasi"
 set key lmargin

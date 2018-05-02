@@ -64,5 +64,5 @@ awk '{ print $0, NR }' DATAS/tmp2.csv > DATAS/tmp.csv  # adding number of the li
 ./precip.pg > IMAGES/weatherPrecip.png
 ./cloud.pg > IMAGES/weatherClouds.png
 ./wind.pg > IMAGES/weatherWind.png
-./pressure.pg > IMAGES/weatherPressure.png
 ./weather.pg > IMAGES/weatherForecast.png
+# ./pressure.pg > IMAGES/weatherPressure.png
