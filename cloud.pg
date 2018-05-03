@@ -30,9 +30,9 @@ set size 1, 1 # ratio 1:1
 
 set style data lines
 
-plot "DATAS/tmp.csv" using 1:8 title "High%" lw 3 lt 2 lc "yellow", \
-"" using 1:7 title "Mid%" lw 3 lt 2 lc "green", \
-"" using 1:6 title "Low%" lw 3 lt 2 lc "blue", \
+plot "DATAS/tmp.csv" using 1:8 title "High%" lw 2 lt 2 lc "yellow", \
+"" using 1:7 title "Mid%" lw 2 lt 2 lc "green", \
+"" using 1:6 title "Low%" lw 2 lt 2 lc "blue", \
 "" u 22:(95):(0.48):(90-0.01*$9*359):(90) w circ lc rgb "brown" fs solid notitle axes x2y1, \
 "" u 22:(95):(0.48) w circ lc rgb "black" axes x2y1 notitle
 # using 1:9 title "Cl%" lw 5 lt 2 lc "purple", \
