@@ -17,7 +17,7 @@ set x2range [0:50]
 #set x2label 'Ore'
 
 set ytics 0.5
-set yrange [0:11]
+set yrange [0:12]
 set ylabel 'mm/h'
 set y2tics 10
 set y2range [0:100]
