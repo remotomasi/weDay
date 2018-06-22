@@ -11,8 +11,8 @@ set format x "h%H\n%d/%m\n%a"
 set xlabel "Time"
 set xtics font ", 10"
 
-set x2tics 10
-set x2range [0:50]
+#set x2tics 10
+#set x2range [0:50]
 #set x2label 'ore'
 
 set ytics 10
