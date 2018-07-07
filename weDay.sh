@@ -22,8 +22,8 @@ if [ -e DATAS/tmp.csv ]; then rm DATAS/tmp.csv; fi
 # Obtain today date
 DATE=$(date +%d%m%Y)
 
-echo -e "Insert latitude and longitude (separated by spaces, i.e.: 60.32 21.03)"
-read par mer
+echo -e "Insert latitude, longitude and forecast days (separated by spaces, i.e.: 60.32 21.03 5)"
+read par mer days
 
 # download of json datas and save the wjson file
 curl "http://api.weatherunlocked.com/api/forecast/$par,$mer?app_id=398aa617&app_key=0d99b683a850f28230471e544d329d2d" > DATAS/weDay.json
@@ -58,11 +58,11 @@ cat DATAS/tmp.csv >> DATAS/finalDatas.csv
 cat DATAS/tmp.csv > DATAS/tmp2.csv
 awk '{ print $0, NR }' DATAS/tmp2.csv > DATAS/tmp.csv  # adding number of the line at the end of each line
 
-./conv2htm.sh DATAS/tmp.csv > HTMLS/weatherForecast.html                 # csv to html conversion
-./pressureWind.pg > IMAGES/weatherPressureWind.png
-./tempDP.pg > IMAGES/weatherTempDP.png
-./precip.pg > IMAGES/weatherPrecip.png
-./cloud.pg > IMAGES/weatherClouds.png
-./wind.pg > IMAGES/weatherWind.png
-./weather.pg > IMAGES/weatherForecast.png
+gnuplot -e "dd=$days" ./conv2htm.sh DATAS/tmp.csv > HTMLS/weatherForecast.html                 # csv to html conversion
+gnuplot -e "dd=$days" ./pressureWind.pg > IMAGES/weatherPressureWind.png
+gnuplot -e "dd=$days" ./tempDP.pg > IMAGES/weatherTempDP.png
+gnuplot -e "dd=$days" ./precip.pg > IMAGES/weatherPrecip.png
+gnuplot -e "dd=$days" ./cloud.pg > IMAGES/weatherClouds.png
+gnuplot -e "dd=$days" ./wind.pg > IMAGES/weatherWind.png
+gnuplot -e "dd=$days" ./weather.pg > IMAGES/weatherForecast.png
 # ./pressure.pg > IMAGES/weatherPressure.png
